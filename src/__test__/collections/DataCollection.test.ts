@@ -2,8 +2,8 @@ import { NumberFilterConfig, RELATIONAL_OPERATOR } from '@visue/datakit/filters/
 import { LengthSorterConfig } from '@visue/datakit/sorters/LengthSorter';
 import { NumberSorterConfig } from '@visue/datakit/sorters/NumberSorter';
 import { ValueSorterConfig } from '@visue/datakit/sorters/ValueSorter';
-import { COLLECTION_TYPES, CollectionFactory } from 'src/data/collections';
-import DataCollection, { DataCollectionEvents } from 'src/data/collections/DataCollection';
+import { COLLECTION_TYPES, CollectionFactory } from 'src/collections';
+import DataCollection, { DataCollectionEvents } from 'src/collections/DataCollection';
 
 const getData = () => {
   const VALUE_RULES = [

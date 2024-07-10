@@ -1,10 +1,10 @@
-import { ValueTypeFactory } from 'src/data/valuetypes';
-import ObjectValueType from 'src/data/valuetypes/ObjectValueType';
+import { VALUE_TYPE_TYPES, ValueTypeFactory } from 'src/valuetypes';
+import ObjectValueType from 'src/valuetypes/ObjectValueType';
 
 describe('Factory', () => {
   describe('create', () => {
     test('type', () => {
-      const result: ObjectValueType = ValueTypeFactory.create(ObjectValueType.TYPE);
+      const result: ObjectValueType = ValueTypeFactory.create(VALUE_TYPE_TYPES.OBJECT);
       expect(result).toBeInstanceOf(ObjectValueType);
     });
   });
@@ -17,7 +17,7 @@ describe('ObjectValueType', () => {
 
   describe('format', () => {
     test('default', () => {
-      const valuetype: ObjectValueType = ValueTypeFactory.create(ObjectValueType.TYPE),
+      const valuetype: ObjectValueType = ValueTypeFactory.create(VALUE_TYPE_TYPES.OBJECT),
         result = valuetype.format(OBJECT);
       expect(result).toBe('{"string":"あ","number":1,"boolean":true,"date":"1999-01-01T18:40:56.789Z"}');
     });
@@ -25,7 +25,7 @@ describe('ObjectValueType', () => {
 
   describe('parse', () => {
     test('default', () => {
-      const valuetype: ObjectValueType = ValueTypeFactory.create(ObjectValueType.TYPE),
+      const valuetype: ObjectValueType = ValueTypeFactory.create(VALUE_TYPE_TYPES.OBJECT),
         result = valuetype.parse('{"string":"あ","number":1,"boolean":true,"date":"1999-01-01T18:40:56.789Z"}');
       expect(result).toEqual({
         ...OBJECT,
@@ -36,7 +36,7 @@ describe('ObjectValueType', () => {
 
   describe('serialize', () => {
     test('default', () => {
-      const valuetype: ObjectValueType = ValueTypeFactory.create(ObjectValueType.TYPE),
+      const valuetype: ObjectValueType = ValueTypeFactory.create(VALUE_TYPE_TYPES.OBJECT),
         result = valuetype.serialize(OBJECT);
       expect(result).toEqual(OBJECT);
     });
