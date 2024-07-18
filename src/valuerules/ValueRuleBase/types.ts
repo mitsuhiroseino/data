@@ -1,4 +1,4 @@
-import { DestructibleConfigBase } from '@visue/core/base/DestructibleBase';
+import { DestructibleConfigBase } from '@visue/core/DestructibleBase';
 import { ValueRuleConfig } from '../types';
 
 /**

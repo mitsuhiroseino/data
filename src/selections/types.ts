@@ -1,4 +1,4 @@
-import { Destructible } from '@visue/core/base/DestructibleBase';
+import { Destructible } from '@visue/core/DestructibleBase';
 import { EventHandlers, Observable } from '@visue/core/events';
 import { Identifiable, IdentifiableConfig } from '@visue/utils';
 

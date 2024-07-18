@@ -1,5 +1,5 @@
-import { Configurable } from '@visue/core/base/ConfigurableBase';
-import { Evented, EventedEventHandlers } from '@visue/core/base/EventedBase';
+import { Configurable } from '@visue/core/ConfigurableBase';
+import { Evented, EventedEventHandlers } from '@visue/core/EventedBase';
 import { Identifiable, IdentifiableConfig } from '@visue/utils';
 import { ValidateOptions, ValueRule, ValueRuleConfig } from '../valuerules';
 

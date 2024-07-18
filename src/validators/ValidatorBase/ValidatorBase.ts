@@ -1,4 +1,4 @@
-import ConfigurableBase from '@visue/core/base/ConfigurableBase';
+import ConfigurableBase from '@visue/core/ConfigurableBase';
 import StringFormatter from '@visue/datakit/formatters/StringFormatter';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { Validator } from '../types';

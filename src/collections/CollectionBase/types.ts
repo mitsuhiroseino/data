@@ -1,4 +1,4 @@
-import { EventedConfig, EventedEventHandlers } from '@visue/core/base/EventedBase';
+import { EventedConfig, EventedEventHandlers } from '@visue/core/EventedBase';
 import { EventInfo, FireParams } from '@visue/core/events';
 import { Filter } from '@visue/datakit/filters';
 import { Sorter } from '@visue/datakit/sorters';

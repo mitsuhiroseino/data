@@ -1,4 +1,4 @@
-import { EventedEvents } from '@visue/core/base/EventedBase';
+import { EventedEvents } from '@visue/core/EventedBase';
 import { EntityBaseEvents } from '../../entities/EntityBase';
 
 /**

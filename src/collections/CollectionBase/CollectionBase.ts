@@ -1,4 +1,4 @@
-import EventedBase from '@visue/core/base/EventedBase';
+import EventedBase from '@visue/core/EventedBase';
 import { Filter, FilterConfig, FilterFactory } from '@visue/datakit/filters';
 import { Sorter, SorterConfig, SorterFactory } from '@visue/datakit/sorters';
 import asArray from '@visue/utils/array/asArray';

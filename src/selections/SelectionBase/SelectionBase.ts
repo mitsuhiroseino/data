@@ -1,4 +1,4 @@
-import EventedBase from '@visue/core/base/EventedBase';
+import EventedBase from '@visue/core/EventedBase';
 import { Identifiable } from '@visue/utils';
 import asArray from '@visue/utils/array/asArray';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';

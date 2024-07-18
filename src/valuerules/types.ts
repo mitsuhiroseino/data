@@ -1,4 +1,4 @@
-import { Destructible } from '@visue/core/base/DestructibleBase';
+import { Destructible } from '@visue/core/DestructibleBase';
 import { Formatter, FormatterConfig } from '@visue/datakit/formatters';
 import { Parser, ParserConfig } from '@visue/datakit/parsers';
 import { Identifiable, IdentifiableConfig } from '@visue/utils';

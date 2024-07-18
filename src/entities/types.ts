@@ -1,4 +1,4 @@
-import { Evented } from '@visue/core/base/EventedBase';
+import { Evented } from '@visue/core/EventedBase';
 import { Identifiable, IdentifiableConfig } from '@visue/utils';
 import { ValueRule, ValueRuleConfig } from '../valuerules';
 

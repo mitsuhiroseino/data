@@ -1,4 +1,4 @@
-import ConfigurableBase from '@visue/core/base/ConfigurableBase';
+import ConfigurableBase from '@visue/core/ConfigurableBase';
 import { Formatter, FormatterConfig, FormatterFactory } from '@visue/datakit/formatters';
 import { Parser, ParserConfig, ParserFactory } from '@visue/datakit/parsers';
 import { EasyProductConfig } from '@visue/factory';

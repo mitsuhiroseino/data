@@ -1,4 +1,4 @@
-import DestructibleBase from '@visue/core/base/DestructibleBase';
+import DestructibleBase from '@visue/core/DestructibleBase';
 import { MESSAGE_LEVEL, MESSAGE_TYPE, Message } from '@visue/message';
 import { TargetSetOptions } from '@visue/message/notifier/TargetMessageNotifier';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';

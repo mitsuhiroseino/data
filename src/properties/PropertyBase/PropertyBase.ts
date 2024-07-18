@@ -1,4 +1,4 @@
-import EventedBase from '@visue/core/base/EventedBase';
+import EventedBase from '@visue/core/EventedBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { ValueRule, ValueRuleConfig, ValueRuleFactory } from '../../valuerules';
 import { Property, ValidateValueOptions } from '../types';

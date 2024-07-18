@@ -1,4 +1,4 @@
-import { EventedConfig, EventedEventHandlers } from '@visue/core/base/EventedBase';
+import { EventedConfig, EventedEventHandlers } from '@visue/core/EventedBase';
 import { EventInfo } from '@visue/core/events';
 import { PropertyConfig } from '../types';
 import PropertyBase from './PropertyBase';
