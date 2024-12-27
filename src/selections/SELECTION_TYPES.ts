@@ -1,9 +1,10 @@
 /**
  * 種別
  */
-export const SELECTION_TYPES = {
+const SELECTION_TYPES = {
   /**
    * データの選択
    */
   DATA: 'data',
-};
+} as const;
+export default SELECTION_TYPES;

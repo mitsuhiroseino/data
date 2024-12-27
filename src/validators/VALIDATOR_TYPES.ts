@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const VALIDATOR_TYPES = {
+const VALIDATOR_TYPES = {
   /**
    * 文字列の桁数、配列・オブジェクトの要素数が指定の範囲内か
    */
@@ -36,4 +36,5 @@ export const VALIDATOR_TYPES = {
    * 値が入力されているか
    */
   REQUIRED: 'required',
-};
+} as const;
+export default VALIDATOR_TYPES;

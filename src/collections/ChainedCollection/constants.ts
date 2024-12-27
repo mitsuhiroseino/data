@@ -1,8 +1,8 @@
-import { CollectionBaseEvents } from '../CollectionBase';
+import { COLLECTION_BASE_EVENTS } from '../CollectionBase';
 
 /**
  * イベント
  */
-export const ChainedCollectionEvents = {
-  ...CollectionBaseEvents,
+export const CHAINED_COLLECTION_EVENTS = {
+  ...COLLECTION_BASE_EVENTS,
 } as const;

@@ -2,13 +2,13 @@ import { EventInfo } from '@visue/core/events';
 import { EntityBaseConfig, EntityBaseEventHandlers } from '../EntityBase';
 import { EntityItem } from '../types';
 import DataEntityBase from './DataEntityBase';
-import { DataEntityBaseEvents } from './constants';
+import { DATA_ENTITY_BASE_EVENTS } from './constants';
 
 /**
  * イベントハンドラー
  */
 export type DataEntityBaseEventHandlers<I extends EntityItem = EntityItem> = EntityBaseEventHandlers & {
-  [DataEntityBaseEvents.update]?: (event: EventInfo<{ entity: DataEntityBase<I>; updates: Partial<I> }>) => void;
+  [DATA_ENTITY_BASE_EVENTS.update]?: (event: EventInfo<{ entity: DataEntityBase<I>; updates: Partial<I> }>) => void;
 };
 
 /**

@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const ENTITY_TYPES = {
+const ENTITY_TYPES = {
   /**
    * 他のエンティティを参照するエンティティ
    */
@@ -21,4 +21,5 @@ export const ENTITY_TYPES = {
    * ツリー構造のデータを持つエンティティ
    */
   TREEDATA: 'treedata',
-};
+} as const;
+export default ENTITY_TYPES;

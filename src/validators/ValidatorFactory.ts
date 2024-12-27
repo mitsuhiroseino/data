@@ -6,7 +6,7 @@ import MinLengthValidator from './MinLengthValidator';
 import MinValidator from './MinValidator';
 import RangeValidator from './RangeValidator';
 import RequiredValidator from './RequiredValidator';
-import { VALIDATOR_TYPES } from './constants';
+import VALIDATOR_TYPES from './VALIDATOR_TYPES';
 import { Validator } from './types';
 
 const ValidatorFactory = new EasyFactory<Validator>({

@@ -1,6 +1,6 @@
 import clone from 'lodash/clone';
 import { Entity, EntityItem } from '../../entities';
-import CollectionBase, { CollectionBaseEvents } from '../CollectionBase';
+import CollectionBase, { COLLECTION_BASE_EVENTS } from '../CollectionBase';
 import NoopCollection from '../NoopCollection';
 import { Collection } from '../types';
 import { ChainedCollectionConfig, ChainedCollectionEventHandlers } from './types';
@@ -24,7 +24,7 @@ class ChainedCollection<
     if (source) {
       // イベントハンドラーを設定
       source.on(
-        CollectionBaseEvents.datachange,
+        COLLECTION_BASE_EVENTS.datachange,
         ({ params }) => {
           me._setSourceEntities(params.data);
         },

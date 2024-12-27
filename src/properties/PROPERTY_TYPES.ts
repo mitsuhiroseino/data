@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const PROPERTY_TYPES = {
+const PROPERTY_TYPES = {
   /**
    * 配列で値を持つプロパティ
    */
@@ -11,4 +11,5 @@ export const PROPERTY_TYPES = {
    * データ種別を持つプロパティ
    */
   TYPED: 'typed',
-};
+} as const;
+export default PROPERTY_TYPES;

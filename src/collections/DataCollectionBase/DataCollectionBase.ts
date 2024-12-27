@@ -8,7 +8,7 @@ import toIds from '../../helpers/toIds';
 import { ValueRule, ValueRuleFactory } from '../../valuerules';
 import CollectionBase from '../CollectionBase';
 import { IEditableCollection } from '../types';
-import { DataCollectionBaseEvents } from './constants';
+import { DATA_COLLECTION_BASE_EVENTS } from './constants';
 import { DataCollectionBaseConfig, DataCollectionBaseEventHandlers } from './types';
 
 /**
@@ -40,7 +40,7 @@ abstract class DataCollectionBase<
       eventTransformation: {
         // Entityの発火するupdateイベントはentitiesupdateに移譲
         update: {
-          type: DataCollectionBaseEvents.entitiesupdate,
+          type: DATA_COLLECTION_BASE_EVENTS.entitiesupdate,
           convertParams: ({ entity, ...rest }) => ({ entities: [entity], ...rest }),
           target: this,
         },
@@ -83,7 +83,7 @@ abstract class DataCollectionBase<
     const me = this,
       entities = me._toEntities(items);
     me._sourceEntities.push(...entities);
-    me.fire(DataCollectionBaseEvents.entitiesadd, { entities });
+    me.fire(DATA_COLLECTION_BASE_EVENTS.entitiesadd, { entities });
     me._applyEntities();
     return entities;
   }
@@ -98,7 +98,7 @@ abstract class DataCollectionBase<
         entities.push(entity);
       }
     }
-    this.fire(DataCollectionBaseEvents.entitiesupdate, { entities });
+    this.fire(DATA_COLLECTION_BASE_EVENTS.entitiesupdate, { entities });
     this._applyEntities();
     return entities;
   }
@@ -112,7 +112,7 @@ abstract class DataCollectionBase<
     // 対象を削除
     const removed = remove(me._sourceEntities, (entity) => ids[entity.$id]),
       entities = removed.map(me._releaseEntity);
-    me.fire(DataCollectionBaseEvents.entitiesremove, { entities });
+    me.fire(DATA_COLLECTION_BASE_EVENTS.entitiesremove, { entities });
     me._applyEntities();
     return entities;
   }
@@ -121,7 +121,7 @@ abstract class DataCollectionBase<
     const me = this,
       entities = me._sourceEntities.map(me._releaseEntity);
     clear(me._sourceEntities);
-    me.fire(DataCollectionBaseEvents.entitiesclear, { entities });
+    me.fire(DATA_COLLECTION_BASE_EVENTS.entitiesclear, { entities });
     me._applyEntities();
     return entities;
   }

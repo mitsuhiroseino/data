@@ -4,7 +4,7 @@ import { Filter } from '@visue/datakit/filters';
 import { Sorter } from '@visue/datakit/sorters';
 import { Entity, EntityItem } from '../../entities';
 import { CollectionConfig } from '../types';
-import { CollectionBaseEvents } from './constants';
+import { COLLECTION_BASE_EVENTS } from './constants';
 
 export type CollectionEventInfo<P = FireParams> = EventInfo<P>;
 
@@ -12,10 +12,10 @@ export type CollectionEventInfo<P = FireParams> = EventInfo<P>;
  * イベントハンドラー
  */
 export type CollectionBaseEventHandlers<I extends EntityItem = EntityItem> = EventedEventHandlers & {
-  [CollectionBaseEvents.sourcechange]?: (event: CollectionEventInfo) => void;
-  [CollectionBaseEvents.datachange]?: (event: EventInfo<{ data: Entity<I>[] }>) => void;
-  [CollectionBaseEvents.filterchange]?: (event: EventInfo<{ filters: Filter[] }>) => void;
-  [CollectionBaseEvents.sortchange]?: (event: EventInfo<{ sorters: Sorter[] }>) => void;
+  [COLLECTION_BASE_EVENTS.sourcechange]?: (event: CollectionEventInfo) => void;
+  [COLLECTION_BASE_EVENTS.datachange]?: (event: EventInfo<{ data: Entity<I>[] }>) => void;
+  [COLLECTION_BASE_EVENTS.filterchange]?: (event: EventInfo<{ filters: Filter[] }>) => void;
+  [COLLECTION_BASE_EVENTS.sortchange]?: (event: EventInfo<{ sorters: Sorter[] }>) => void;
 };
 
 /**

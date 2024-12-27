@@ -1,5 +1,5 @@
+import VALUE_TYPE_TYPES from '../VALUE_TYPE_TYPES';
 import ValueTypeBase from '../ValueTypeBase';
-import { VALUE_TYPE_TYPES } from '../constants';
 import { DateValueTypeConfig } from './types';
 
 /**

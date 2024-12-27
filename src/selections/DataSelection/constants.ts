@@ -1,8 +1,8 @@
-import { SelectionEventsBase } from '../SelectionBase';
+import { SELECTION_EVENTS_BASE } from '../SelectionBase';
 
 /**
  * イベント
  */
-export const DataSelectionEvents = {
-  ...SelectionEventsBase,
+export const DATA_SELECTION_EVENTS = {
+  ...SELECTION_EVENTS_BASE,
 } as const;

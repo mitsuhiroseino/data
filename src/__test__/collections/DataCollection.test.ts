@@ -3,7 +3,7 @@ import { LengthSorterConfig } from '@visue/datakit/sorters/LengthSorter';
 import { NumberSorterConfig } from '@visue/datakit/sorters/NumberSorter';
 import { ValueSorterConfig } from '@visue/datakit/sorters/ValueSorter';
 import { COLLECTION_TYPES, CollectionFactory } from 'src/collections';
-import DataCollection, { DataCollectionEvents } from 'src/collections/DataCollection';
+import DataCollection, { DATA_COLLECTION_EVENTS } from 'src/collections/DataCollection';
 
 const getData = () => {
   const VALUE_RULES = [
@@ -205,8 +205,8 @@ describe('DataCollection', () => {
         collection = new DataCollection({
           source: SOURCE5,
           handlers: {
-            [DataCollectionEvents.sourcechange]: onSourceChange,
-            [DataCollectionEvents.datachange]: onDataChange,
+            [DATA_COLLECTION_EVENTS.sourcechange]: onSourceChange,
+            [DATA_COLLECTION_EVENTS.datachange]: onDataChange,
           },
           valueRules: VALUE_RULES,
         });
@@ -225,7 +225,7 @@ describe('DataCollection', () => {
       expect(onSourceChange).toBeCalledTimes(1);
       expect(onSourceChange).toBeCalledWith(
         expect.objectContaining({
-          type: DataCollectionEvents.sourcechange,
+          type: DATA_COLLECTION_EVENTS.sourcechange,
           params: expect.objectContaining({
             source: [
               expect.objectContaining({ item: ITEM0 }),
@@ -237,7 +237,7 @@ describe('DataCollection', () => {
       );
       expect(onDataChange).toBeCalledTimes(1);
       expect(onDataChange.mock.calls[0][0]).toMatchObject({
-        type: DataCollectionEvents.datachange,
+        type: DATA_COLLECTION_EVENTS.datachange,
         params: { data: ENTITIES3 },
       });
     });
@@ -249,9 +249,9 @@ describe('DataCollection', () => {
         onDataChange = jest.fn(),
         collection = new DataCollection({ source: SOURCE0, valueRules: VALUE_RULES });
       // sourceの変更
-      collection.on(DataCollectionEvents.sourcechange, onSourceChange);
+      collection.on(DATA_COLLECTION_EVENTS.sourcechange, onSourceChange);
       // dataの変更
-      collection.on(DataCollectionEvents.datachange, onDataChange);
+      collection.on(DATA_COLLECTION_EVENTS.datachange, onDataChange);
 
       // イベントの発火状況
       expect(onSourceChange).toBeCalledTimes(0);
@@ -266,12 +266,12 @@ describe('DataCollection', () => {
       // イベントの発火状況
       expect(onSourceChange).toBeCalledTimes(1);
       expect(onSourceChange.mock.calls[0][0]).toMatchObject({
-        type: DataCollectionEvents.sourcechange,
+        type: DATA_COLLECTION_EVENTS.sourcechange,
         params: { source: ENTITIES5 },
       });
       expect(onDataChange).toBeCalledTimes(1);
       expect(onDataChange.mock.calls[0][0]).toMatchObject({
-        type: DataCollectionEvents.datachange,
+        type: DATA_COLLECTION_EVENTS.datachange,
         params: { data: ENTITIES5 },
       });
     });
@@ -292,8 +292,8 @@ describe('DataCollection', () => {
           source: SOURCE5,
           filters,
           handlers: {
-            [DataCollectionEvents.filterchange]: onFilterChange,
-            [DataCollectionEvents.datachange]: onDataChange,
+            [DATA_COLLECTION_EVENTS.filterchange]: onFilterChange,
+            [DATA_COLLECTION_EVENTS.datachange]: onDataChange,
           },
           valueRules: VALUE_RULES,
         });
@@ -319,7 +319,7 @@ describe('DataCollection', () => {
       expect(onFilterChange).toBeCalledTimes(1);
       expect(onDataChange).toBeCalledTimes(1);
       expect(onDataChange.mock.calls[0][0]).toMatchObject({
-        type: DataCollectionEvents.datachange,
+        type: DATA_COLLECTION_EVENTS.datachange,
         params: {
           data: [ENTITY1, ENTITY2, ENTITY3],
         },
@@ -335,7 +335,7 @@ describe('DataCollection', () => {
       expect(onFilterChange).toBeCalledTimes(1);
       expect(onDataChange).toBeCalledTimes(1);
       expect(onDataChange.mock.calls[0][0]).toMatchObject({
-        type: DataCollectionEvents.datachange,
+        type: DATA_COLLECTION_EVENTS.datachange,
         params: {
           data: [ENTITY1, ENTITY2, ENTITY3, ENTITY4],
         },
@@ -352,8 +352,8 @@ describe('DataCollection', () => {
           source: SOURCE5,
           sorters,
           handlers: {
-            [DataCollectionEvents.sortchange]: onSortChange,
-            [DataCollectionEvents.datachange]: onDataChange,
+            [DATA_COLLECTION_EVENTS.sortchange]: onSortChange,
+            [DATA_COLLECTION_EVENTS.datachange]: onDataChange,
           },
           valueRules: VALUE_RULES,
         });
@@ -373,7 +373,7 @@ describe('DataCollection', () => {
       expect(onSortChange).toBeCalledTimes(1);
       expect(onDataChange).toBeCalledTimes(1);
       expect(onDataChange.mock.calls[0][0]).toMatchObject({
-        type: DataCollectionEvents.datachange,
+        type: DATA_COLLECTION_EVENTS.datachange,
         params: {
           data: [ENTITY2, ENTITY4, ENTITY3, ENTITY0, ENTITY1],
         },
@@ -389,7 +389,7 @@ describe('DataCollection', () => {
       expect(onSortChange).toBeCalledTimes(1);
       expect(onDataChange).toBeCalledTimes(1);
       expect(onDataChange.mock.calls[0][0]).toMatchObject({
-        type: DataCollectionEvents.datachange,
+        type: DATA_COLLECTION_EVENTS.datachange,
         params: {
           data: [ENTITY2, ENTITY3, ENTITY4, ENTITY0, ENTITY1],
         },
@@ -403,7 +403,7 @@ describe('DataCollection', () => {
         collection = new DataCollection({
           source: SOURCE5,
           handlers: {
-            [DataCollectionEvents.entitiesupdate]: onUpdate,
+            [DATA_COLLECTION_EVENTS.entitiesupdate]: onUpdate,
           },
           valueRules: VALUE_RULES,
         });
@@ -422,7 +422,7 @@ describe('DataCollection', () => {
       // イベントの発火状況
       expect(onUpdate).toBeCalledTimes(1);
       expect(onUpdate.mock.calls[0][0]).toMatchObject({
-        type: DataCollectionEvents.entitiesupdate,
+        type: DATA_COLLECTION_EVENTS.entitiesupdate,
         params: {
           entities: [entity],
         },
@@ -436,7 +436,7 @@ describe('DataCollection', () => {
         collection = new DataCollection({
           source: SOURCE5,
           handlers: {
-            [DataCollectionEvents.destroy]: onDestroy,
+            [DATA_COLLECTION_EVENTS.DESTROY]: onDestroy,
           },
           valueRules: VALUE_RULES,
         });
@@ -447,7 +447,7 @@ describe('DataCollection', () => {
       // イベントの発火状況
       expect(onDestroy).toBeCalledTimes(1);
       expect(onDestroy.mock.calls[0][0]).toMatchObject({
-        type: DataCollectionEvents.destroy,
+        type: DATA_COLLECTION_EVENTS.DESTROY,
         params: {},
       });
     });

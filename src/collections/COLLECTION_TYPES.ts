@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const COLLECTION_TYPES = {
+const COLLECTION_TYPES = {
   /**
    * 他のコレクションを参照するコレクション
    */
@@ -16,4 +16,5 @@ export const COLLECTION_TYPES = {
    * 何もしないコレクション
    */
   NOOP: 'noop',
-};
+} as const;
+export default COLLECTION_TYPES;

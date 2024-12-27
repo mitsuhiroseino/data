@@ -1,4 +1,4 @@
-import DataEntityBase, { DataEntityBaseEvents } from '../DataEntityBase';
+import DataEntityBase, { DATA_ENTITY_BASE_EVENTS } from '../DataEntityBase';
 import NoopEntity from '../NoopEntity';
 import { Entity } from '../types';
 import { ChainedEntityConfig, ChainedEntityEventHandlers } from './types';
@@ -24,7 +24,10 @@ class ChainedEntity<
           me._setItem(entity);
         }) as any,
         options = { owner: me };
-      item.addHandlers({ [DataEntityBaseEvents.update]: handler, [DataEntityBaseEvents.itemchange]: handler }, options);
+      item.addHandlers(
+        { [DATA_ENTITY_BASE_EVENTS.update]: handler, [DATA_ENTITY_BASE_EVENTS.itemchange]: handler },
+        options,
+      );
     } else {
       me._setItem(new NoopEntity() as any);
     }

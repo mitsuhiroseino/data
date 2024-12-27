@@ -1,9 +1,9 @@
 import EasyFactory from '@visue/factory/easy/EasyFactory';
 import ChainedEntity from './ChainedEntity';
 import DataEntity from './DataEntity';
+import ENTITY_TYPES from './ENTITY_TYPES';
 import NoopEntity from './NoopEntity';
 import TreeDataEntity from './TreeDataEntity';
-import { ENTITY_TYPES } from './constants';
 import { Entity } from './types';
 
 const EntityFactory = new EasyFactory<Entity>({

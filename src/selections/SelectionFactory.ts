@@ -1,6 +1,6 @@
 import EasyFactory from '@visue/factory/easy/EasyFactory';
 import DataSelection from './DataSelection';
-import { SELECTION_TYPES } from './constants';
+import SELECTION_TYPES from './SELECTION_TYPES';
 import { Selection } from './types';
 
 const SelectionFactory = new EasyFactory<Selection>({

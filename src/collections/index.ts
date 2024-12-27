@@ -1,3 +1,3 @@
+export { default as COLLECTION_TYPES } from './COLLECTION_TYPES';
 export { default as CollectionFactory } from './CollectionFactory';
-export * from './constants';
 export type * from './types';

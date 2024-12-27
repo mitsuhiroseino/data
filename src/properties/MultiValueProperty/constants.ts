@@ -1,8 +1,8 @@
-import { TypedPropertyEvents } from '../TypedProperty';
+import { TYPED_PROPERTY_EVENTS } from '../TypedProperty';
 
 /**
  * イベント
  */
-export const MultiValuePropertyEvents = {
-  ...TypedPropertyEvents,
+export const MULTI_VALUE_PROPERTY_EVENTS = {
+  ...TYPED_PROPERTY_EVENTS,
 } as const;

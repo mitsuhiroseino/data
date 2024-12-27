@@ -8,7 +8,7 @@ import clone from 'lodash/clone';
 import { Entity, EntityItem } from '../../entities';
 import { Selection, SelectionFactory } from '../../selections';
 import { Collection } from '../types';
-import { CollectionBaseEvents } from './constants';
+import { COLLECTION_BASE_EVENTS } from './constants';
 import { CollectionBaseConfig, CollectionBaseEventHandlers } from './types';
 
 /**
@@ -111,7 +111,7 @@ abstract class CollectionBase<
    */
   protected _setSourceEntities(entities: Entity<I>[]) {
     this._sourceEntities = entities;
-    this.fire(CollectionBaseEvents.sourcechange, { source: entities });
+    this.fire(COLLECTION_BASE_EVENTS.sourcechange, { source: entities });
     // sourceが差し替えられたらdataも更新する
     this._applyEntities(entities);
   }
@@ -188,7 +188,7 @@ abstract class CollectionBase<
   protected _setEntities(entities: Entity<I>[]) {
     const me = this;
     me._setEntities_(entities);
-    me.fire(CollectionBaseEvents.datachange, { data: entities });
+    me.fire(COLLECTION_BASE_EVENTS.datachange, { data: entities });
   }
 
   /**
@@ -282,7 +282,7 @@ abstract class CollectionBase<
    * フィルター変更時のイベント発火、dataへの適用
    */
   private _afterFilterChange() {
-    this.fire(CollectionBaseEvents.filterchange, { filters: this._filters });
+    this.fire(COLLECTION_BASE_EVENTS.filterchange, { filters: this._filters });
     // フィルターの適用
     this._applyEntities();
   }
@@ -380,7 +380,7 @@ abstract class CollectionBase<
    * ソート状態変更時のイベント発火、dataへの適用
    */
   private _afterSorterChange() {
-    this.fire(CollectionBaseEvents.sortchange, { sorters: this._sorters });
+    this.fire(COLLECTION_BASE_EVENTS.sortchange, { sorters: this._sorters });
     // ソート状態の適用
     this._applyEntities();
   }

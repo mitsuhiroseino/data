@@ -1,8 +1,8 @@
-import { DataEntityBaseEvents } from '../DataEntityBase';
+import { DATA_ENTITY_BASE_EVENTS } from '../DataEntityBase';
 
 /**
  * イベント
  */
-export const TreeDataEntityEvents = {
-  ...DataEntityBaseEvents,
+export const TREE_DATA_ENTITY_EVENTS = {
+  ...DATA_ENTITY_BASE_EVENTS,
 } as const;

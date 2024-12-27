@@ -2,7 +2,7 @@ import EasyFactory from '@visue/factory/easy/EasyFactory';
 import AnyValueRule from './AnyValueRule';
 import MultiValueRule from './MultiValueRule';
 import TypedValueRule from './TypedValueRule';
-import { VALUE_RULE_TYPES } from './constants';
+import VALUE_RULE_TYPES from './VALUE_RULE_TYPES';
 import { ValueRule } from './types';
 
 const ValueRuleFactory = new EasyFactory<ValueRule>({

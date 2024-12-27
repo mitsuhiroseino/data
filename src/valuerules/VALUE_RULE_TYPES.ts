@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const VALUE_RULE_TYPES = {
+const VALUE_RULE_TYPES = {
   /**
    * 任意の値のルール
    */
@@ -16,4 +16,5 @@ export const VALUE_RULE_TYPES = {
    * データ種別を持つ値のルール
    */
   TYPED: 'typed',
-};
+} as const;
+export default VALUE_RULE_TYPES;

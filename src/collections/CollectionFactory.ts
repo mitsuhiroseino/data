@@ -1,8 +1,8 @@
 import EasyFactory from '@visue/factory/easy/EasyFactory';
 import ChainedCollection from './ChainedCollection';
+import COLLECTION_TYPES from './COLLECTION_TYPES';
 import DataCollection from './DataCollection';
 import NoopCollection from './NoopCollection';
-import { COLLECTION_TYPES } from './constants';
 import { Collection } from './types';
 
 const CollectionFactory = new EasyFactory<Collection>({

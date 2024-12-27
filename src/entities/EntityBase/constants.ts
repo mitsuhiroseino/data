@@ -1,9 +1,9 @@
-import { EventedEvents } from '@visue/core/EventedBase';
+import { EVENTED_EVENTS } from '@visue/core/EventedBase';
 
 /**
  * イベント
  */
-export const EntityBaseEvents = {
-  ...EventedEvents,
+export const ENTITY_BASE_EVENTS = {
+  ...EVENTED_EVENTS,
   itemchange: 'itemchange',
 } as const;

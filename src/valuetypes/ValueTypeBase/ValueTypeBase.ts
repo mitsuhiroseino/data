@@ -17,6 +17,7 @@ abstract class ValueTypeBase<V = any, C extends ValueTypeBaseConfig = ValueTypeB
 {
   readonly isValueType = true;
 
+  // parser,formatter取得のために種別を持つ
   protected abstract _type: string;
 
   /**

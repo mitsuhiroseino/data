@@ -2,7 +2,7 @@ import EventedBase from '@visue/core/EventedBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { ValueRule, ValueRuleConfig, ValueRuleFactory } from '../../valuerules';
 import { Property, ValidateValueOptions } from '../types';
-import { PropertyBaseEvents } from './constants';
+import { PROPERTY_BASE_EVENTS } from './constants';
 import { PropertyBaseConfig, PropertyBaseEventHandlers } from './types';
 
 /**
@@ -76,7 +76,7 @@ abstract class PropertyBase<
     if (changed) {
       this._set(value);
       if (!silent) {
-        this.fire(PropertyBaseEvents.change, { value });
+        this.fire(PROPERTY_BASE_EVENTS.change, { value });
       }
     }
     return changed;

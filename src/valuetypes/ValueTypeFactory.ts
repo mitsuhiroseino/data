@@ -5,7 +5,7 @@ import DateValueType from './DateValueType';
 import NumberValueType from './NumberValueType';
 import ObjectValueType from './ObjectValueType';
 import StringValueType from './StringValueType';
-import { VALUE_TYPE_TYPES } from './constants';
+import VALUE_TYPE_TYPES from './VALUE_TYPE_TYPES';
 import { ValueType } from './types';
 
 const ValueTypeFactory = new EasyFactory<ValueType>({

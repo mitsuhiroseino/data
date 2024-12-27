@@ -1,7 +1,7 @@
 import EventedBase from '@visue/core/EventedBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { Entity, EntityItem } from '../types';
-import { EntityBaseEvents } from './constants';
+import { ENTITY_BASE_EVENTS } from './constants';
 import { EntityBaseConfig, EntityBaseEventHandlers } from './types';
 
 /**
@@ -47,7 +47,7 @@ abstract class EntityBase<
 
   protected _setItem(item: I): void {
     this._item = item;
-    this.fire(EntityBaseEvents.itemchange, { entity: this, item });
+    this.fire(ENTITY_BASE_EVENTS.itemchange, { entity: this, item });
   }
 
   /**

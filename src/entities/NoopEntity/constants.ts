@@ -1,8 +1,8 @@
-import { EventedEvents } from '@visue/core/EventedBase';
+import { EVENTED_EVENTS } from '@visue/core/EventedBase';
 
 /**
  * イベント
  */
 export const NoopEntityEvents = {
-  ...EventedEvents,
+  ...EVENTED_EVENTS,
 } as const;

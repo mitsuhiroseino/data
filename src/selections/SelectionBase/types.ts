@@ -2,14 +2,14 @@ import { EventedConfig, EventedEventHandlers } from '@visue/core/EventedBase';
 import { EventInfo } from '@visue/core/events';
 import { Identifiable } from '@visue/utils';
 import { SelectionConfig } from '../types';
-import { SelectionEventsBase } from './constants';
+import { SELECTION_EVENTS_BASE } from './constants';
 
 /**
  * イベントハンドラー
  */
 export type SelectionEventHandlersBase<I extends Identifiable = Identifiable> = EventedEventHandlers & {
-  [SelectionEventsBase.select]?: (event: EventInfo<{ items: I[] }>) => void;
-  [SelectionEventsBase.unselect]?: (event: EventInfo<{ items: I[] }>) => void;
+  [SELECTION_EVENTS_BASE.select]?: (event: EventInfo<{ items: I[] }>) => void;
+  [SELECTION_EVENTS_BASE.unselect]?: (event: EventInfo<{ items: I[] }>) => void;
 };
 
 /**

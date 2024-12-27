@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const VALUE_TYPE_TYPES = {
+const VALUE_TYPE_TYPES = {
   /**
    * 任意の値
    */
@@ -31,4 +31,5 @@ export const VALUE_TYPE_TYPES = {
    * stringの値
    */
   STRING: 'string',
-};
+} as const;
+export default VALUE_TYPE_TYPES;

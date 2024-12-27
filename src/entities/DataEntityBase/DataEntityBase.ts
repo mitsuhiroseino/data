@@ -2,7 +2,7 @@ import toMap from '@visue/utils/array/toMap';
 import { ValueRule, ValueRuleFactory } from '../../valuerules';
 import EntityBase from '../EntityBase';
 import { EntityItem } from '../types';
-import { DataEntityBaseEvents } from './constants';
+import { DATA_ENTITY_BASE_EVENTS } from './constants';
 import { DataEntityBaseConfig, DataEntityBaseEventHandlers } from './types';
 
 /**
@@ -43,7 +43,7 @@ abstract class DataEntityBase<
     if (changed) {
       this._set(name, value);
       if (!silent) {
-        this.fire(DataEntityBaseEvents.update, { entity: this, updates: { [name]: value } });
+        this.fire(DATA_ENTITY_BASE_EVENTS.update, { entity: this, updates: { [name]: value } });
       }
     }
     return changed;
@@ -84,7 +84,7 @@ abstract class DataEntityBase<
       }
     }
     if (changed && !silent) {
-      this.fire(DataEntityBaseEvents.update, { entity: this, updates });
+      this.fire(DATA_ENTITY_BASE_EVENTS.update, { entity: this, updates });
     }
     return changed;
   }

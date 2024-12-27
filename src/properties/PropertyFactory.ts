@@ -1,7 +1,7 @@
 import EasyFactory from '@visue/factory/easy/EasyFactory';
 import MultiValueProperty from './MultiValueProperty';
+import PROPERTY_TYPES from './PROPERTY_TYPES';
 import TypedProperty from './TypedProperty';
-import { PROPERTY_TYPES } from './constants';
 import { Property } from './types';
 
 const PropertyFactory = new EasyFactory<Property>({

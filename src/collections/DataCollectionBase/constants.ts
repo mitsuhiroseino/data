@@ -1,10 +1,10 @@
-import { CollectionBaseEvents } from '../CollectionBase';
+import { COLLECTION_BASE_EVENTS } from '../CollectionBase';
 
 /**
  * イベント
  */
-export const DataCollectionBaseEvents = {
-  ...CollectionBaseEvents,
+export const DATA_COLLECTION_BASE_EVENTS = {
+  ...COLLECTION_BASE_EVENTS,
   entitiesadd: 'entitiesadd',
   entitiesupdate: 'entitiesupdate',
   entitiesremove: 'entitiesremove',

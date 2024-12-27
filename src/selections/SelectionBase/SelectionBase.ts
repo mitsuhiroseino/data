@@ -6,7 +6,7 @@ import remove from 'lodash/remove';
 import toId from '../../helpers/toId';
 import toIds from '../../helpers/toIds';
 import { Selection } from '../types';
-import { SelectionEventsBase } from './constants';
+import { SELECTION_EVENTS_BASE } from './constants';
 import { SelectionConfigBase, SelectionEventHandlersBase } from './types';
 
 /**
@@ -67,7 +67,7 @@ abstract class SelectionBase<
         selected.push(item);
       }
     }
-    me.fire(SelectionEventsBase.select, { items: selected });
+    me.fire(SELECTION_EVENTS_BASE.select, { items: selected });
   }
 
   unselect(target: string | I | (string | I)[]): I[] {
@@ -80,7 +80,7 @@ abstract class SelectionBase<
         }
         return result;
       }, [] as I[]);
-    me.fire(SelectionEventsBase.unselect, { items: unselected });
+    me.fire(SELECTION_EVENTS_BASE.unselect, { items: unselected });
     return unselected;
   }
 
@@ -99,7 +99,7 @@ abstract class SelectionBase<
       unselected = me._selections;
     me._selections = [];
     me._selectionMap = {};
-    me.fire(SelectionEventsBase.unselect, { items: unselected });
+    me.fire(SELECTION_EVENTS_BASE.unselect, { items: unselected });
     return unselected;
   }
 

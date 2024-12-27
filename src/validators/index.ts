@@ -1,3 +1,3 @@
-export { default as ValidatorFactory } from './ValidatorFactory';
-export * from './constants';
 export type * from './types';
+export { default as VALIDATOR_TYPES } from './VALIDATOR_TYPES';
+export { default as ValidatorFactory } from './ValidatorFactory';
